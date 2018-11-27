@@ -18,20 +18,20 @@ function updateTeams(){
 
 $("button").click(function() {
     var randomNumber= Math.random();
-   $("#userChoice").text(userChoice);
-   userChoice = $("#input").val ();
-    if (randomNumber <1 && randomNumber> 0.66) {
-        $("#computerChoice").html(computerChoice);
+    userChoice = $("#input").val ();
+    $("#userChoice").text(userChoice);
+    
+    if (randomNumber <= 1 && randomNumber >= 0.66) {
         computerChoice = "rock";
-}
-    else if ( randomNumber <0.66 && randomNumber >0.33) {
-        $("#computerChoice").html(computerChoice);
+    }
+    else if ( randomNumber <=0.66 && randomNumber >=0.33) {
         computerChoice = "paper";
-}
+    }
     else {
-        $("#computerChoice").html(computerChoice);
         computerChoice="scissors";
-}
+    }
+    $("#computerChoice").html(computerChoice);
+    
     if (userChoice === "rock" && computerChoice === "scissors") {
         $("#winner").html("User Wins!");
         myPoint += point;
